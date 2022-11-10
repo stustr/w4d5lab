@@ -58,4 +58,7 @@ def delete_zombie(id):
 
 # SHOW
 @zombies_blueprint.route("/zombies/<id>")
-def show_zombie()
+def show_zombie(id):
+    zombie = zombie_repository.select(id)
+    victims = zombie_repository.find_victims(zombie)
+    return render_template("zombies/show.html", zombie = zombie, victims = victims)

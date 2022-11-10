@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% block content %}
+<p>{{ zombie.name }} the {{ zombie.zombie_type.name }} claimed the following victims:</p>
+{% for victim in victims %}
+<p>{{ victim.name }}</p>
+{% endfor %}</p>{% endblock content %}
+ 
